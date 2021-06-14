@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div-- class="new-items">
+    <div class="new-items">
       <div class="weight-bold-text">
         商品名
         <span class="indispensable">必須</span>
@@ -35,21 +35,26 @@
       </div>
     </div>
 
-    <!--div class="items-detail">
+    <div class="items-detail-form">
       <div class="weight-bold-text">商品の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          グループ
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           商品の状態
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.collection_select(:itemstatus_id, Itemstatus.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <div class="weight-bold-text">
+          写真のカテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
-    </div-->
+    </div>
 
     <div class="register-btn">
       <%= f.submit "出品する" ,class:"register-red-btn" %>
