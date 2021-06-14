@@ -1,0 +1,17 @@
+<header>
+  <div class="header-contents">
+    <div class="head-title">
+      <h2>TRADE APP</h2>
+    </div>
+    <div class="head-contents">
+      <% if user_signed_in? %>
+        <p><%= current_user.nickname %>さん。こんにちは</p>
+        <%= link_to 'トレードする', url: "#" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+      <% else %>
+        <%= link_to 'ログイン', new_user_session_path, class: "logout" %>
+        <%= link_to '新規登録', new_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
+</header>
