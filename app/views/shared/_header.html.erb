@@ -6,7 +6,7 @@
     <div class="head-contents">
       <% if user_signed_in? %>
         <p><%= current_user.nickname %>さん。こんにちは</p>
-        <%= link_to 'トレードする', url: "#" %>
+        <%= link_to 'トレードする', new_picture_path %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
       <% else %>
         <%= link_to 'ログイン', new_user_session_path, class: "logout" %>

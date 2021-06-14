@@ -14,12 +14,12 @@
 
 ### Association
 
-- has_many :items
+- has_many :pictures
 - has_many :transactions
 - has_many :comments
 - has_many :likes
 
-## itemsテーブル
+## picturesテーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
@@ -28,6 +28,7 @@
 | group_id           | integer    | null: false                    |
 | member_id          | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
+| position_id        | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
@@ -40,15 +41,15 @@
 
 ## transactionsテーブル
 
-| Column | Type       | Options                        |
-| -------| ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| ----------| ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| picture   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- belongs_to :picture
 
 ## Addressesテーブル
 
@@ -68,25 +69,25 @@
 
 ## Commentsテーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | -------------------------------|
-| text   | text       | null: false                    |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | -------------------------------|
+| text      | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| picture   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- belongs_to :picture
 
 ## Likesテーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | -------------------------------|
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | -------------------------------|
+| user      | references | null: false, foreign_key: true |
+| picture   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- belongs_to :picture
