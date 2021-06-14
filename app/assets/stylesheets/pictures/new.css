@@ -71,11 +71,35 @@
 /* /共通 */
 
 /* 商品画像 */
+#item-image {
+  width: 1000px;
+  height: 300px;
+  cursor: pointer;
+}
+
 .img-upload {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 2vh 0;
+  position: relative;
+}
+
+.choice-box {
+  width: 1000px;
+  height: 300px;
+  position: absolute;
+  top: 94px;
+  pointer-events: none;
+  text-align: center;
+  line-height: 300px;
+  font-size: 26px;
+  background-color: rgb(196, 196, 196);
+}
+
+#preview {
+  width: 150px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  background-color: tomato;
 }
 
 .click-upload {
