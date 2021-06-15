@@ -3,7 +3,7 @@
 <div class="wrapper">
   <div class="main-contents">
     <% @pictures.each do |picture| %>
-      <%= link_to edit_picture_path(picture) do %>
+      <%= link_to picture_path(picture) do %>
       <div class="pictures">
         <div class="piuture-image">
           <%= image_tag picture.images.first %>
@@ -18,7 +18,6 @@
             <i class="far fa-heart"></i>
             <span>0</span>
           </div>
-          <%= link_to '削除', picture_path(picture), method: :delete, onClick: "return confirm('本当に削除してよろしいですか？');" %>
         </div>
       </div>
       <% end %>

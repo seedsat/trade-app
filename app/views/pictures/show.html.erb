@@ -1,0 +1,67 @@
+<%= render 'shared/header' %>
+
+<div class="item-detail-wrapper">
+  <div class="item-detail-contents">
+    <h1><%= @picture.name %></h1>
+    <div class="item-images">
+      <% @picture.images.each do |image| %>
+        <%= image_tag image %>
+      <% end %>
+    </div>
+    <% if user_signed_in? && @picture.user.id == current_user.id %>
+      <div class="edit-delete">
+        <div class="edit-btn">
+        <%= link_to '編集', edit_picture_path(@picture) %>
+        </div>
+        <div class="delete-btn">
+          <%= link_to '削除', picture_path(@picture), method: :delete, onClick: "return confirm('本当に削除してよろしいですか？');" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="good-btn">
+      <i class="far fa-heart"></i>
+      <a href="#">いいね（０）</a>
+    </div>
+    <div class="item-detail-info">
+      <table class="item-detail-table">
+        <tr>
+          <th class="detail-title">トレード希望者</th>
+          <td class="detail-value"><%= @picture.user.nickname %>さん</td>
+        </tr>
+        <tr>
+          <th class="detail-title">トレード条件</th>
+          <td class="detail-value"><%= simple_format(@picture.info) %></td>
+        </tr>
+        <tr>
+          <th class="detail-title">出品メンバー（グループ）</th>
+          <td class="detail-value"><%= @picture.member_name %></td>
+        </tr>
+        <tr>
+          <th class="detail-title">ポジション</th>
+          <td class="detail-value"><%= @picture.position.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-title">商品状態</th>
+          <td class="detail-value"><%= @picture.status.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-title">出品日</th>
+          <td class="detail-value"><%= @picture.created_at %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="comment-area">
+      <form>
+          <textarea class="comment-text" placeholder="commetn"></textarea>
+          <button type="submit" class="comment-btn">
+            <i class="fas fa-comment-alt"></i>
+            コメントする
+          </button>
+      </form>
+      <div class="comments-area">
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

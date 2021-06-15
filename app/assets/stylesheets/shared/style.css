@@ -1,6 +1,5 @@
 header {
   height: 100px;
-  margin-bottom: 50px;
   background-image: linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%);
 }
 
@@ -21,5 +20,4 @@ header {
 footer {
   height: 100px;
   background-image: linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%);
-  margin-top: 50px;
 }

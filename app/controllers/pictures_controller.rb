@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :find_picture, only: [:edit, :update, :destroy]
+  before_action :find_picture, only: [:edit, :update, :destroy, :show]
   before_action :move_index, only: [:edit, :update, :destroy]
 
   def index
@@ -33,6 +33,9 @@ class PicturesController < ApplicationController
 
   def destroy
     redirect_to root_path if @picture.destroy
+  end
+
+  def show
   end
 
   private
