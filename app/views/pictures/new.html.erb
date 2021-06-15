@@ -12,13 +12,13 @@
         商品画像
         <span class="indispensable">必須</span>
       </div>
-      <div class="click-upload">
+      <div class="click-upload" id="image-preview">
         <p>
-          クリックしてファイルをアップロード
+          クリックしてファイルをアップロード（画像は５枚まで選択出来ます）
         </p>
         <%= f.file_field :images, name: 'picture[images][]', multiple: true, id:"item-image" %>
         <div class="choice-box">
-          ドラッグ＆ドロップまたはクリック（画像は５枚まで選択出来ます）
+          <i class="fas fa-camera"></i>
         </div>
       </div>
     </div>

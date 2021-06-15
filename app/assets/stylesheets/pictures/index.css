@@ -1,0 +1,43 @@
+.main-contents {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pictures {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 10px;
+  border: solid 1px #000;
+}
+
+.piuture-image {
+  width: 300px;
+  height: 250px;
+}
+
+.piuture-image img {
+  width: 300px;
+  height: 250px;
+}
+
+.picture-text {
+  display: flex;
+}
+
+.picture-text p {
+  margin: 0 10px;
+}
+
+.font-btn {
+  display: flex;
+  margin-left: 15px;
+}
+
+.font-btn i {
+  padding-top: 10px;
+  margin-right: 10px;
+}
