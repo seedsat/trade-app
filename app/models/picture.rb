@@ -8,7 +8,7 @@ class Picture < ApplicationRecord
   belongs_to :position
 
   with_options presence: true do
-    validates :images, :images_presence
+    validates :images, length: { maximum: 5, message: 'は5枚以上は投稿出来ません' }
     validates :name, length: { maximum: 50 }
     validates :info, length: { maximum: 500 }
     validates :member_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角で入力してください' }
@@ -19,14 +19,5 @@ class Picture < ApplicationRecord
     validates :group_id
     validates :status_id
     validates :position_id
-  end
-
-  def images_presence
-    if images.attached?
-      # inputに保持されているimagesがあるかを確認
-      if images.length > 6
-        errors.add(:image, '5枚まで投稿できます')
-      end
-    end
   end
 end
