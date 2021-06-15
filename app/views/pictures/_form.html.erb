@@ -58,8 +58,11 @@
           <%= f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
         </div>
       </div>
-
       <div class="register-btn">
-        <%= f.submit "出品する" ,class:"register-red-btn", onClick: "return confirm('本当に投稿してよろしいですか？');" %>
+        <% unless request.url.match(/edit/) %>
+          <%= f.submit "投稿する" ,class:"register-red-btn", onClick: "return confirm('本当に投稿してよろしいですか？');" %>
+        <% else %>
+          <%= f.submit "編集する" ,class:"register-red-btn", onClick: "return confirm('本当に編集してよろしいですか？');" %>
+        <%end%>
       </div>
     <% end %>
