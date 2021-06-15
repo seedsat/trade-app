@@ -35,6 +35,9 @@ class PicturesController < ApplicationController
     redirect_to root_path if @picture.destroy
   end
 
+  def show
+  end
+
   private
 
   def picture_params
