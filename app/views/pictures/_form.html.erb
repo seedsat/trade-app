@@ -1,0 +1,65 @@
+<%= form_with model: @picture, local: true do |f| %>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          商品画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload" id="image-preview">
+          <p>
+            クリックしてファイルをアップロード（画像は５枚まで選択出来ます）
+          </p>
+          <%= f.file_field :images, name: 'picture[images][]', multiple: true, id:"item-image" %>
+          <div class="choice-box">
+            <i class="fas fa-camera"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-items">
+        <div class="weight-bold-text">
+          商品名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            生写真の状態とトレードの条件
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"トレードの条件と写真の保存状況などを書いてください" ,rows:"7" ,maxlength:"1000" %>
+        </div>
+        <div class="weight-bold-text">
+          メンバー名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :member_name, class:"items-text", id:"item-name", placeholder:"メンバー名" %>
+      </div>
+
+      <div class="items-detail-form">
+        <div class="weight-bold-text">商品の詳細</div>
+        <div class="form">
+          <div class="weight-bold-text">
+            グループ(グループは間違えないでください)
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <div class="weight-bold-text">
+            商品の状態
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+          <div class="weight-bold-text">
+            写真のカテゴリー
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        </div>
+      </div>
+
+      <div class="register-btn">
+        <%= f.submit "出品する" ,class:"register-red-btn", onClick: "return confirm('本当に投稿してよろしいですか？');" %>
+      </div>
+    <% end %>
