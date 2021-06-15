@@ -18,6 +18,7 @@
             <i class="far fa-heart"></i>
             <span>0</span>
           </div>
+          <%= link_to '削除', picture_path(picture), method: :delete, onClick: "return confirm('本当に削除してよろしいですか？');" %>
         </div>
       </div>
       <% end %>

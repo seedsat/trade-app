@@ -1,6 +1,8 @@
 class PicturesController < ApplicationController
-  before_action :find_picture, only: [:edit, :update]
-  
+  before_action :authenticate_user!, except: [:index]
+  before_action :find_picture, only: [:edit, :update, :destroy]
+  before_action :move_index, only: [:edit, :update, :destroy]
+
   def index
     @pictures = Picture.includes(:user).order('created_at desc')
   end
@@ -29,6 +31,10 @@ class PicturesController < ApplicationController
     end
   end
 
+  def destroy
+    redirect_to root_path if @picture.destroy
+  end
+
   private
 
   def picture_params
@@ -37,5 +43,9 @@ class PicturesController < ApplicationController
 
   def find_picture
     @picture = Picture.find(params[:id])
+  end
+
+  def move_index
+    redirect_to root_path unless @picture.user.id == current_user.id
   end
 end
