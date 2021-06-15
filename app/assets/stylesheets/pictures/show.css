@@ -1,0 +1,93 @@
+.item-detail-wrapper {
+  padding-bottom: 30px;
+}
+
+.item-detail-contents {
+  width: 80%;
+  height: 1500px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.item-detail-contents h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.item-images {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: tomato;
+}
+
+.good-btn {
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+
+.item-detail-info {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.item-detail-table {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.item-detail-info tr, .item-detail-info td {
+  border: solid 1px #000;
+}
+
+.detail-title {
+  width: 20%;
+  padding: 30px;
+  background-color: #eee;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.comment-area {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: antiquewhite;
+  padding: 30px;
+}
+
+.comment-text {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.comment-btn {
+  width: 50%;
+  background-color: lime;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+}
+
+.comments-area {
+  height: 200px;
+  margin-top: 30px;
+  background-color: yellow;
+}
