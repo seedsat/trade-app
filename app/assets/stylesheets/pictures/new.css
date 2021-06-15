@@ -91,6 +91,7 @@
   text-align: center;
   line-height: 300px;
   font-size: 26px;
+  border: dashed lightslategrey;
   background-color: rgb(196, 196, 196);
 }
 
@@ -98,7 +99,7 @@
   width: 150px;
   height: 300px;
   position: absolute;
-  top: 0;
+  top: 94px;
   background-color: tomato;
 }
 

@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
   
   def index
+    @pictures = Picture.includes(:user).order('created_at desc')
   end
 
   def new

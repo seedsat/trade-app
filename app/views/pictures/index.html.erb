@@ -1,4 +1,26 @@
 <%= render 'shared/header' %>
-<h1>トップページ</h1>
+
+<div class="wrapper">
+  <div class="main-contents">
+    <% @pictures.each do |picture| %>
+      <div class="pictures">
+        <div class="piuture-image">
+          <%= image_tag picture.images.first %>
+        </div>
+        <div class="picture-text">
+          <p><%= picture.name %></p>
+          <div class="font-btn">
+            <i class="far fa-comment-alt"></i>
+            <span>0</span>
+          </div>
+          <div class="font-btn">
+            <i class="far fa-heart"></i>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= render 'shared/footer' %>
