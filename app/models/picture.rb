@@ -1,6 +1,6 @@
 class Picture < ApplicationRecord
   belongs_to :user
-  has_many_attached :images
+  has_many_attached :images, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :group
@@ -13,7 +13,7 @@ class Picture < ApplicationRecord
     validates :info, length: { maximum: 500 }
     validates :member_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角で入力してください' }
   end
-
+  
   # ジャンルの選択が「選択してください」の時は保存できないようにする
   with_options presence: true, numericality: { other_than: 1 } do
     validates :group_id
