@@ -1,6 +1,6 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
-    <%= form_with  model: @address, url: user_addresses_path(current_user), method: :post, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with  model: @address, url: user_address_path(current_user.id, @address.id), id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
       <%= render "shared/error_messages", model: @address %>
 
       <div class='shipping-address-form'>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="register-btn">
-        <%= f.submit "配送先を登録する" ,class:"register-red-btn", onClick: "return confirm('配送先を登録してよろしいですか？');" %>
+        <%= f.submit "配送先を編集する" ,class:"register-red-btn", onClick: "return confirm('配送先を編集してよろしいですか？');" %>
       </div>
     <% end %>
   </div>

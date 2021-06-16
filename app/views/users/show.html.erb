@@ -13,7 +13,11 @@
           <i class="fas fa-caret-right"></i>
           </li>
         <li class="left-lists">
-          <%= link_to '配送先情報', new_user_address_path(current_user) %>
+          <% if @user.address.present? %>
+            <%= link_to '配送先情報編集', edit_user_address_path(current_user.id, @user.address.id) %>
+          <% else %>
+            <%= link_to '配送先情報登録', new_user_address_path(current_user) %>
+          <% end %>
           <i class="fas fa-caret-right"></i>
           </li>
         <li class="left-lists">
