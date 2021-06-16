@@ -120,17 +120,16 @@
 
 .comment-btn {
   width: 50%;
-  background-color: lime;
+  background-color: #ffa500;
   border-radius: 50px;
   color: #fff;
   font-size: 20px;
   border: none;
+  cursor: pointer;
 }
 
 .comments-area {
-  height: 200px;
   margin-top: 30px;
-  background-color: yellow;
 }
 
 .fa-arrow-alt-circle-left {
@@ -147,4 +146,54 @@
   z-index: 100;
   right: -100px;
   top: 200px
+}
+
+.balloon-left {
+  position: relative;
+  background-color: #ffc4c4;
+  padding: 10px;
+  color: #333;
+  margin: 15px;
+  text-align: left;
+  width: 65%;
+}
+
+.balloon-left::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-right: 12px solid #ffc4c4;
+  top: 20%;
+  left: -24px;
+}
+
+.balloon-left p {
+  margin: 0;
+  padding: 0;
+}
+
+.balloon-right {
+  position: relative;
+  background-color: #adff2f;
+  padding: 10px;
+  color: #333;
+  width: 90%;
+  text-align: left;
+  margin-left: 30px;
+  width: 65%;
+  left: 150px;
+}
+
+.balloon-right::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-left: 12px solid #adff2f;
+  top: 20%;
+  left: 100%;
+}
+
+.balloon-right p {
+  margin: 0;
+  padding: 0;
 }
