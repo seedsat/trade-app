@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_picture, only: [:edit, :update, :destroy, :show]
   before_action :move_index, only: [:edit, :update, :destroy]
 
@@ -36,6 +36,8 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @picture.comments.includes(:user)
   end
 
   private

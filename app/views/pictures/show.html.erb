@@ -50,27 +50,36 @@
         </tr>
       </table>
     </div>
-    <div class="comment-area">
-      <form>
-          <textarea class="comment-text" placeholder="コメントする"></textarea>
+
+    <% if user_signed_in? %>
+      <div class="comment-area">
+        <%=form_with model: [@picture, @comment], method: :post, local: true do |f| %>
+          <%= f.text_area :text, class: "comment-text", placeholder: "コメントする" %>
           <button type="submit" class="comment-btn">
             <i class="fas fa-comment-alt"></i>
             コメントする
           </button>
-      </form>
-      <div class="comments-area">
-        <div class="balloon-left">
-          <p>左よう吹き出しデザイン左よう吹き出しデザイン左よう吹き出しデザイン左よう吹き出しデザイン左よう吹き出しデザイン左よう吹き出しデザイン</p>
-        </div>
-        <div class="balloon-right">
-          <p>
-            右よう吹き出しデザイン右よう吹き出しデザイン右よう吹き出しデザイン
-            右よう吹き出しデザイン右よう吹き出しデザイン右よう吹き出しデザイン
-            右よう吹き出しデザイン右よう吹き出しデザイン右よう吹き出しデザイン
-          </p>
+        <% end %>
+        <div class="comments-area">
+          <% @comments.each do |comment| %>
+            <% if comment.user_id != current_user.id %>
+              <div class="balloon-left">
+                <p><span class="comment-name"><%= comment.user.nickname %></span>さん</p>
+                <p><%= simple_format(comment.text) %></p>
+              </div>
+            <% else %>
+              <div class="balloon-right">
+                <p><%= simple_format(comment.text) %></p>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
-    </div>
+    <% else %>
+      <div class="comments-area">
+        <%= link_to 'コメントするにはログインしてください', new_user_session_path, class: 'login-btn' %>
+      </div>
+    <% end %>
   </div>
 </div>
 
