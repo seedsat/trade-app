@@ -13,10 +13,6 @@ header {
   justify-content: space-around;
 }
 
-.head-contents {
-  margin-top: 30px;
-}
-
 .head-contents p, .logout {
   margin-right: 30px;
 }
@@ -24,6 +20,22 @@ header {
 .mypage-head-contents span {
   font-size: 26px;
   letter-spacing: 5px;
+}
+
+.input-search {
+  width: 300px;
+  padding: 5px;
+}
+
+.fa-search-plus {
+  position: absolute;
+  right: 270px;
+  top: 35px;
+}
+
+.header-lists {
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
