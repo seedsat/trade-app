@@ -120,17 +120,16 @@
 
 .comment-btn {
   width: 50%;
-  background-color: lime;
+  background-color: #ffa500;
   border-radius: 50px;
   color: #fff;
   font-size: 20px;
   border: none;
+  cursor: pointer;
 }
 
 .comments-area {
-  height: 200px;
   margin-top: 30px;
-  background-color: yellow;
 }
 
 .fa-arrow-alt-circle-left {
@@ -147,4 +146,76 @@
   z-index: 100;
   right: -100px;
   top: 200px
+}
+
+.balloon-left {
+  position: relative;
+  background-color: #ffc4c4;
+  padding: 10px;
+  color: #333;
+  margin: 15px;
+  text-align: left;
+  width: 75%;
+}
+
+.balloon-left::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-right: 12px solid #ffc4c4;
+  top: 20%;
+  left: -24px;
+}
+
+.balloon-left p {
+  margin: 0;
+  padding: 0;
+}
+
+.comment-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.balloon-right {
+  position: relative;
+  background-color: #adff2f;
+  padding: 10px;
+  color: #333;
+  width: 90%;
+  text-align: left;
+  margin-left: 30px;
+  width: 75%;
+  left: 100px;
+  margin-bottom: 20px;
+}
+
+.balloon-right::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-left: 12px solid #adff2f;
+  top: 20%;
+  left: 100%;
+}
+
+.balloon-right p {
+  margin: 0;
+  padding: 0;
+}
+
+.login-btn {
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  background-color: #ffa500;
+}
+
+.login-btn:hover {
+  color: #fff;
+  opacity: 0.8;
 }
