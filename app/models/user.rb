@@ -23,4 +23,5 @@ class User < ApplicationRecord
   end
 
   has_many :pictures
+  has_one  :address
 end
