@@ -21,6 +21,11 @@ header {
   margin-right: 30px;
 }
 
+.mypage-head-contents span {
+  font-size: 26px;
+  letter-spacing: 5px;
+}
+
 footer {
   height: 100px;
   background-image: linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%);

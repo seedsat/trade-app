@@ -1,5 +1,40 @@
-<%= render 'shared/header' %>
+<%= render 'shared/mypage_header' %>
 
-<h1>my page</h1>
+<div class="wrapper">
+  <div class="mypage-contents">
+    <div class="mypage-left">
+      <ul class="maypage-nav">
+        <li class="left-lists">
+          <%= link_to 'プロフィール', edit_user_registration_path %>
+          <i class="fas fa-caret-right"></i>
+        </li>
+        <li class="left-lists">
+          <%= link_to 'トレードする', new_picture_path %>
+          <i class="fas fa-caret-right"></i>
+          </li>
+        <li class="left-lists">
+          <%= link_to '配送先情報', root_path %>
+          <i class="fas fa-caret-right"></i>
+          </li>
+        <li class="left-lists">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <i class="fas fa-caret-right"></i>
+          </li>
+      </ul>
+    </div>
+    <div class="mypage-right">
+      <span>トレード一覧</span>
+      <ul class="trade-lists">
+        <% @user.pictures.each do |picture| %>
+          <%= link_to picture_path(picture) do %>
+            <li class="list">
+              <%= picture.name %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <%= render 'shared/footer' %>
