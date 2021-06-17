@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'likes/create'
   root 'pictures#index'
   devise_for :users, controllers: {
     registrations: "users/registrations",
