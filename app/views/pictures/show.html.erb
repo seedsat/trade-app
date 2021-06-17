@@ -18,14 +18,8 @@
         </div>
       </div>
     <% end %>
-    <div class="good-btn">
-      <% if current_user.liked_by?(@picture_id) %>
-        <i class="far fa-heart"></i>
-        <a href="#">いいねを外す（０）</a>
-      <% else%>
-        <i class="far fa-heart"></i>
-        <a href="#">いいね（０）</a>
-      <% end %>
+    <div class="good-btn" id="good-button">
+      <%= render 'picture', picture: @picture %>
     </div>
     <div class="item-detail-info">
       <table class="item-detail-table">

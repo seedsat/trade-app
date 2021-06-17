@@ -1,0 +1,7 @@
+<% if current_user.liked_by?(picture) %>
+  <i class="far fa-heart"></i>
+  <%= link_to 'いいねを外す', destroy_like_path(picture), method: :delete, remote: true %>(　<%= picture.likes.count %>　)
+<% else%>
+  <i class="far fa-heart"></i>
+  <%= link_to 'いいね', create_like_path(picture), method: :post, remote: true %>　(　<%= picture.likes.count %>　)
+<% end %>
