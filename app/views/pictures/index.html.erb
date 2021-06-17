@@ -9,10 +9,12 @@
           <%= image_tag picture.images.first %>
         </div>
         <div class="picture-text">
-          <p><%= picture.name %></p>
+          <p><%= picture.name.truncate(18, omission: '...') %></p>
+        </div>
+        <div class="picture-btn">
           <div class="font-btn">
             <i class="far fa-comment-alt"></i>
-            <span>0</span>
+            <span><%= picture.comments.count %></span>
           </div>
           <div class="font-btn">
             <i class="far fa-heart"></i>

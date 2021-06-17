@@ -8,20 +8,13 @@
 }
 
 .pictures {
-  width: 300px;
-  height: 300px;
   margin-bottom: 10px;
   border: solid 1px #000;
 }
 
-.piuture-image {
-  width: 300px;
-  height: 250px;
-}
-
 .piuture-image img {
   width: 300px;
-  height: 250px;
+  height: 300px;
 }
 
 .picture-text {
@@ -29,11 +22,15 @@
 }
 
 .picture-text p {
-  margin: 0 10px;
+  padding: 10px 0 0 10px;
+}
+
+.picture-btn {
+  display: flex;
+  margin-left: 180px;
 }
 
 .font-btn {
-  display: flex;
   margin-left: 15px;
 }
 
