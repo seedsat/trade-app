@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :likes, only: [:create, :destroy]
   end
   resources :users, only: [:show] do
     resources :addresses, only: [:new, :create, :edit, :update]
