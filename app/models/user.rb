@@ -27,6 +27,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  # ログインしているユーザーがいいねをしているかどうかを判定
   def liked_by?(picture_id)
     likes.where(picture_id: picture_id).exists?
   end
