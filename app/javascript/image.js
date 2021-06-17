@@ -5,8 +5,6 @@ $(function(){
     var file = $('input[type="file"]').prop('files')[0];
     var fileReader = new FileReader();
 
-    console.log(file);debugger;
-
     //読み込みが完了すると、srcにfileのURLを格納
     fileReader.onloadend = function() {
       var src = fileReader.result

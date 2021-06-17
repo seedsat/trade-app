@@ -4,6 +4,7 @@ class Position < ActiveHash::Base
     { id: 2, name: 'より' },
     { id: 3, name: 'ちゅう' },
     { id: 4, name: 'ひき' },
-    { id: 5, name: '座り' }
+    { id: 5, name: '座り' },
+    { id: 6, name: 'セット' }
   ]
 end
