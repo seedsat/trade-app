@@ -17,7 +17,7 @@
             <span><%= picture.comments.count %></span>
           </div>
           <div class="font-btn">
-            <% if picture.likes.count > 0 %>
+            <% if user_signed_in? && current_user.liked_by?(picture.id) %>
               <i class="fas fa-heart red-heart"></i>
             <% else %>
               <i class="fas fa-heart"></i>

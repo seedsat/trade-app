@@ -6,6 +6,9 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.includes(:user).order('created_at desc')
+    @pictures.each do |p|
+      @pic = p.likes
+    end
   end
 
   def new
