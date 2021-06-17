@@ -2,6 +2,7 @@ class PicturesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_picture, only: [:edit, :update, :destroy, :show]
   before_action :move_index, only: [:edit, :update, :destroy]
+  before_action :search_pictures, only: [:index, :show, :search]
 
   def index
     @pictures = Picture.includes(:user).order('created_at desc')
@@ -40,6 +41,10 @@ class PicturesController < ApplicationController
     @comments = @picture.comments.includes(:user)
   end
 
+  def search
+    @results = @p.result.includes(:user).order('created_at desc')
+  end
+
   private
 
   def picture_params
@@ -52,5 +57,9 @@ class PicturesController < ApplicationController
 
   def move_index
     redirect_to root_path unless @picture.user.id == current_user.id
+  end
+
+  def search_pictures
+    @p = Picture.ransack(params[:q])
   end
 end

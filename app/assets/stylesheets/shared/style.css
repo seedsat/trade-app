@@ -1,5 +1,4 @@
 header {
-  height: 100px;
   background-image: linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%);
 }
 
@@ -14,7 +13,7 @@ header {
 }
 
 .head-contents {
-  margin-top: 30px;
+  width: 400px;
 }
 
 .head-contents p, .logout {
@@ -24,6 +23,29 @@ header {
 .mypage-head-contents span {
   font-size: 26px;
   letter-spacing: 5px;
+}
+
+.input-search {
+  width: 300px;
+  padding: 5px;
+}
+
+.fa-search-plus {
+  position: absolute;
+  right: 330px;
+  top: 35px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.header-lists {
+  margin: 15px 0;
+  display: flex;
+}
+
+.header-lists li {
+  margin-right: 20px;
 }
 
 footer {

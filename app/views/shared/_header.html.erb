@@ -4,13 +4,21 @@
       <h2><%= link_to 'TRADE APP', root_path %></h2>
     </div>
     <div class="head-contents">
+      <%= search_form_for @p, url: search_pictures_path do |f| %>
+        <%= f.text_field :name_or_info_or_member_name_cont, placeholder: 'キーワードで探す', class: 'input-search' %>
+        <input type="submit" value="&#xf002;" class="fas fa-search-plus">
+      <% end %>
       <% if user_signed_in? %>
-        <%= link_to 'マイページ', user_path(current_user) %>
-        <%= link_to 'トレードする', new_picture_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        <ul class="header-lists">
+          <li><%= link_to 'マイページへ', user_path(current_user) %></li>
+          <li><%= link_to 'トレードする', new_picture_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        </ul>
       <% else %>
-        <%= link_to 'ログイン', new_user_session_path, class: "logout" %>
-        <%= link_to '新規登録', new_user_registration_path %>
+        <ul class="header-lists">
+          <%= link_to 'ログイン', new_user_session_path, class: "logout" %>
+          <%= link_to '新規登録', new_user_registration_path %>
+        </ul>
       <% end %>
     </div>
   </div>
