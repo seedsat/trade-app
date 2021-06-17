@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :find_picture, only: [:edit, :update, :destroy, :show]
   before_action :move_index, only: [:edit, :update, :destroy]
   before_action :search_pictures, only: [:index, :show, :search]
