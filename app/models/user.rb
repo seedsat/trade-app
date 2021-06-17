@@ -10,8 +10,8 @@ class User < ApplicationRecord
     validates_format_of :password, with: PASSWORD_REGEX, message: 'は半角英数字で入力してください', if: :password_required?
   end
 
-   # ひらがな、カタカナ、漢字のみ許可する
-   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角で入力してください' } do
+  # ひらがな、カタカナ、漢字のみ許可する
+  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角で入力してください' } do
     validates :last_name
     validates :first_name
   end
