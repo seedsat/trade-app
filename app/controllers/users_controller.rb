@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   before_action :move_index, only: [:show]
 
   def show
+    @pictures = @user.pictures.sort.reverse
+  end
+
+  def like
   end
 
   private

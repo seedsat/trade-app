@@ -1,57 +1,28 @@
-<div class="items-sell-contents">
-  <div class="items-sell-main">
-    <%= form_with  model: @address, url: user_address_path(current_user.id, @address.id), id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
-      <%= render "shared/error_messages", model: @address %>
-
-      <div class='shipping-address-form'>
-        <h2 class="items-sell-title">配送先登録</h2>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text">郵便番号</label>
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text">都道府県</label>
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text">市区町村</label>
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text">番地</label>
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.text_field :house_number, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text">建物名</label>
-            <span class="form-any">任意</span>
-          </div>
-          <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）柳ビル103"%>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text">電話番号</label>
-            <span class="indispensable">必須</span>
-          </div>
-          <%= f.text_field :telephone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
-        </div>
-      </div>
-
-      <div class="register-btn">
-        <%= f.submit "配送先を編集する" ,class:"register-red-btn", onClick: "return confirm('配送先を編集してよろしいですか？');" %>
-      </div>
+<div id="page_top"><a href="#"></a></div>
+<%= form_with model: @address, url: user_address_path(current_user, @address.id), class: 'registration-main', local: true do |f| %>
+  <div class="container">
+    <div class="head">
+      <% if request.url.match(/new/) %>
+        <h2>配送先登録</h2>
+      <% else %>
+        <h2>配送先変更</h2>
+      <% end %>
+    </div>
+    <%= render 'devise/shared/error_messages', model: f.object %>
+    <%= f.text_field :postal_code, placeholder:"郵便番号（必須）", maxlength:"40", class: "input-field" %>
+    <div class="form-group">
+      <div class="prefec-label">都道府県</div>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-prefecbox", id:"item-category"}) %>
+    </div>
+    <%= f.text_field :city, placeholder:"市区町村（必須）", autofocus: true, class: "input-field" %>
+    <%= f.text_field :house_number, placeholder:"番地（必須）", autofocus: true, class: "input-field" %>
+    <%= f.text_field :building_name, placeholder:"建物（任意）", autofocus: true, class: "input-field" %>
+    <%= f.text_field :telephone_number, placeholder:"電話番号（必須）", autofocus: true, class: "input-field" %>
+    <% if request.url.match(/new/) %>
+      <%= f.submit "登録する" ,class:"button", onClick: "return confirm('登録してよろしいですか？');" %>
+    <% else %>
+      <%= f.submit "変更する" ,class:"button", onClick: "return confirm('変更してよろしいですか？');" %>
     <% end %>
+    <%= link_to '前に戻る', :back, class: "back-button" %>
   </div>
-</div>
+<% end %>

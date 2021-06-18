@@ -1,12 +1,10 @@
-.wrapper {
-  margin: 50px 0;
+.mypage-wrapper {
+  display: flex;
 }
 
 .mypage-contents {
-  height: 1000px;
   display: flex;
   width: 90%;
-  margin: 0 auto;
 }
 
 .mypage-left {
