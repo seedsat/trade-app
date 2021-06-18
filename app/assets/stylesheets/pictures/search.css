@@ -1,11 +1,14 @@
 .search-wrapper {
-  background-color: whitesmoke;
+  background-color: white;
+  display: flex;
 }
 
 .search-contents {
   width: 90%;
   margin: 0 auto;
   display: flex;
+  margin-bottom: 30px;
+  background-color: white;
 }
 
 .search-left {
@@ -21,19 +24,31 @@
 }
 
 .search-right {
-  width: calc( 100% - 300px );
+  margin: 30px 0 0 30px;
+  flex-wrap: wrap;
 }
 
 .search-group {
   padding: 20px;
+  position: relative;
 }
 
-.search-group i {
+.seach-icon {
+  position: absolute;
+  top: 70px;
+}
+
+.search-group i, .search-group h3 {
   margin-right: 10px;
+  color: white;
+}
+
+.search-group ul li label {
+  color: white;
 }
 
 .name-field {
-  width: 100%;
+  width: 90%;
   padding: 10px;
 }
 
@@ -43,8 +58,7 @@
 }
 
 .search-btn {
-  width: 250px;
-  padding: 10px;
+  width: 100px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -53,12 +67,6 @@
   background-color: red;
   font-size: 22px;
   margin-bottom: 30px;
-}
-
-.search-right {
-  margin: 30px 0 0 30px;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .result-list {
@@ -81,4 +89,35 @@
   font-size: 26px;
   font-weight: bold;
   padding: 10px;
+}
+
+.search-title {
+  color: white;
+  background-color: #dfffe3;
+  padding-bottom: 0;
+  padding-top: 0;
+  letter-spacing: 3px;
+  color: #000;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.search-contents h1 {
+  position: relative;
+  background: #dfffe3;
+  box-shadow: 0px 0px 0px 5px #dfffe3;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  margin: 20px;
+  padding: 15px;
+  width: 400px;
+  font-weight: bold;
+  font-size: 28px;
+  height: 50px;
+  letter-spacing: 3px;
+}
+
+.search-right-content {
+  width: 100%;
 }

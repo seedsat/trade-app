@@ -1,0 +1,26 @@
+<div class="side-bar">
+  <h1><%= link_to 'TRADE APP', root_path %> </h1>
+  <div class="text-search">
+    <%= search_form_for @p, url: search_pictures_path do |f| %>
+      <%= f.text_field :name_or_info_or_member_name_cont, placeholder: 'キーワードで探す', class: 'input-search' %>
+      <input type="submit" value="&#xf002;" class="fas fa-search-plus">
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <h2 class="user-name">ようこそ！<br/><%= current_user.nickname %>さん</h2>
+  <% else%>
+    <h2 class="user-name">ようこそ！<br/>ゲストさん</h2>
+  <% end %>
+  <div class="nav-contents">
+    <ul class="sidebar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-list"><%= link_to 'マイページへ', user_path(current_user) %></li>
+        <li class="nav-list"><%= link_to 'トレードする', new_picture_path %></li>
+        <li class="nav-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,  onClick: "return confirm('ログアウトしてよろしいですか？');" %></li>
+      <% else %>
+        <li class="nav-list"><%= link_to '新規登録', new_user_registration_path %></li>
+        <li class="nav-list"><%= link_to 'ログイン', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

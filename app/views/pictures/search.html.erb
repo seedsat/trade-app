@@ -1,49 +1,36 @@
-<%= render 'shared/header' %>
-
+<div id="page_top"><a href="#"></a></div>
 <div class="search-wrapper">
+  <%= render 'shared/search-sidebar' %>
   <div class="search-contents">
-    <div class="search-left">
-      <h2>詳細検索</h2>
-      <%= search_form_for @p, url: search_pictures_path do |f| %>
-        <div class="search-group">
-        <h3><i class="fas fa-female"></i>メンバー名</h3>
-          <%= f.text_field :member_name_cont, class: "name-field", placeholder: "メンバー名" %>
-        </div>
-        <div class="search-group">
-          <h3><i class="fas fa-users"></i>グループ</h3>
-          <%= f.collection_select(:group_id_eq, Group.where.not(id: 1), :id, :name, {prompt: "選択してください"}, {class: "group-select"}) %>
-        </div>
-        <div class="search-group">
-          <h3><i class="far fa-images"></i>写真ポジション</h3>
-          <ul>
-            <%= f.collection_check_boxes(:position_id_eq_any, Position.where.not(id: 1), :id, :name, {multiple: true, include_hidden: false}) do |cb| %>
-              <li>
-                <%= cb.check_box %>
-                <%= cb.label %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-        <%= f.submit '検索', class: "search-btn" %>
-      <% end %>
-    </div>
-    <div class="search-right">
+    <div class="right-contents search-right-content">
       <% if @results.present? %>
+        <h1>検索結果</h1>
+      <% else %>
+        <h1>検索結果はありません</h1>
+      <% end %>
+      <div class="trade-lists">
         <% @results.each do |result| %>
           <%= link_to picture_path(result) do %>
-            <div class="result-list">
-              <div class="result-image"><%= image_tag result.images.first %></div>
-              <div class="result-text">
-                <h4><%= result.name.truncate(15, omission: '...') %></h4>
+            <div class="sample2">
+              <%= image_tag result.images.first %>
+              <div class="mask">
+                <div class="caption"><%= result.name %></div>
+                <div class="mask-icon">
+                  <div class="caption"><i class="far fa-comment-alt"></i><%= result.comments.count %></div>
+                  <div class="caption">
+                    <% if user_signed_in? && current_user.liked_by?(result.id) %>
+                      <i class="fas fa-heart red-heart"></i>
+                    <% else %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
+                    <span><%= result.likes.count %></span>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
         <% end %>
-      <% else %>
-        <h2 class="no-result">検索結果はありません</h2>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-<%= render 'shared/footer' %>

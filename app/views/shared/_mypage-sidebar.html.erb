@@ -1,0 +1,30 @@
+<div class="side-bar">
+  <h1><%= link_to 'TRADE APP', root_path %> </h1>
+  <h2 class="user-name"><%= current_user.nickname %>さんの<br>マイページ</h2>
+  <div class="nav-contents">
+    <ul class="sidebar-nav">
+      <li class="nav-list">
+        <%= link_to 'プロフィール', edit_user_registration_path %>
+      </li>
+      <li class="nav-list">
+        <%= link_to 'トレードする', new_picture_path %>
+      </li>
+      <li class="nav-list">
+        <% if request.url.match(/like/) %>
+          <%= link_to 'トレード一覧', user_path(current_user) %>
+        <% else %>
+          <%= link_to 'いいね一覧', like_user_path(current_user) %>
+        <% end %>
+      </li>
+      <li class="nav-list">
+        <% if @user.address.present? %>
+          <%= link_to '配送先情報編集', edit_user_address_path(current_user.id, @user.address.id) %>
+        <% else %>
+          <%= link_to '配送先情報登録', new_user_address_path(current_user) %>
+        <% end %>
+        <i class="fas fa-caret-right"></i>
+      </li>
+      <li class="nav-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,  onClick: "return confirm('ログアウトしてよろしいですか？');" %></li>
+    </ul>
+  </div>
+</div>

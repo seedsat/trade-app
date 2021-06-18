@@ -1,0 +1,32 @@
+<div class="search-side-bar">
+  <h1><%= link_to 'TRADE APP', root_path %> </h1>
+  <% if user_signed_in? %>
+    <h2 class="user-name">ようこそ！<br/><%= current_user.nickname %>さん</h2>
+  <% else%>
+    <h2 class="user-name">ようこそ！<br/>ゲストさん</h2>
+  <% end %>
+  <h2 class="search-title">詳細検索</h2>
+  <%= search_form_for @p, url: search_pictures_path do |f| %>
+    <div class="search-group">
+      <h3><i class="fas fa-female"></i>メンバー名</h3>
+      <%= f.text_field :member_name_cont, class: "name-field", placeholder: "メンバー名" %>
+      <input type="submit" value="&#xf002;" class="fas fa-search-plus seach-icon">
+    </div>
+    <div class="search-group">
+      <h3><i class="fas fa-users"></i>グループ</h3>
+      <%= f.collection_select(:group_id_eq, Group.where.not(id: 1), :id, :name, {prompt: "選択してください"}, {class: "group-select"}) %>
+    </div>
+    <div class="search-group">
+      <h3><i class="far fa-images"></i>写真ポジション</h3>
+      <ul>
+        <%= f.collection_check_boxes(:position_id_eq_any, Position.where.not(id: 1), :id, :name, {multiple: true, include_hidden: false}) do |cb| %>
+          <li>
+            <%= cb.check_box %>
+            <%= cb.label %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <%= f.submit '検索', class: "search-btn" %>
+  <% end %>
+</div>

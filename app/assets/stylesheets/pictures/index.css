@@ -1,10 +1,165 @@
 .main-contents {
-  width: 90%;
-  height: 90%;
-  margin: 0 auto;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.side-bar {
+  width: 300px;
+  /*height: 100vh;*/
+  background-color: black;
+}
+
+.search-side-bar {
+  width: 300px;
+  background-color: black;
+}
+
+.side-bar h1 {
+  font-size: 26px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.side-bar h1 a {
+  color: white;
+}
+
+.search-side-bar h1 {
+  font-size: 26px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.search-side-bar h1 a {
+  color: white;
+}
+
+.text-search {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-search {
+  width: 250px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.fa-search-plus {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.user-name {
+  color: white;
+  text-align: center;
+}
+
+.nav-contents {
+  height: 300px;
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.nav-list a {
+  color: white;
+}
+
+.nav-list a:hover {
+  color: yellow;
+}
+
+.right-contents {
+  width: calc(100% - 300px);
+}
+
+.right-contents h1, .mypage-right h1, .search-right h1, .right-content h1 {
+  position: relative;
+  background: #dfffe3;
+  box-shadow: 0px 0px 0px 5px #dfffe3;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  margin: 20px;
+  padding: 15px;
+  width: 400px;
+  font-weight: bold;
+  font-size: 28px;
+  height: 50px;
+}
+
+.right-contents h1:after, .right-content h1:after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #a8ffac;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.trade-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sample2 {
+	width: 350px;
+	height: 350px;
+	overflow: hidden;
+	margin: 10px 8px 10px 16px;
+	position: relative;
+}
+.sample2 .caption {
+	font-size:  130%;
+	text-align: center;
+	color:  #fff;
+  padding-right: 20px;
+}
+.sample2 .mask {
+	width:  100%;
+	height:	  100%;
+	position: absolute;
+	top:  0;
+	left: 0;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.6s ease;
+	transition: all 0.6s ease;
+}
+.sample2:hover .mask {
+	opacity: 1;
+	padding-top: 80px;
+}
+
+.sample2 img {
+  width: 350px;
+  height: 350px;
+}
+
+.mask-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.caption i {
+  margin-right: 10px;
 }
 
 .pictures {
