@@ -12,6 +12,7 @@ module TradeApp
     config.load_defaults 6.0
     config.assets.initialize_on_precompile = false
     config.i18n.default_locale = :ja
+    config.time_zone = 'Asia/Tokyo'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

@@ -45,7 +45,7 @@
         </tr>
         <tr>
           <th class="detail-title">出品日</th>
-          <td class="detail-value"><%= @picture.created_at %></td>
+          <td class="detail-value"><%= l @picture.created_at, format: :short %></td>
         </tr>
       </table>
     </div>

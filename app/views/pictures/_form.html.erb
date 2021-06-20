@@ -1,12 +1,7 @@
 <%= form_with model: @picture, local: true do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
   <div class="picture-container">
     <div class="head">
-      <% if request.url.match(/new/) %>
-        <h2>トレード情報登録</h2>
-      <% else %>
-        <h2>トレード情報変更</h2>
-      <% end %>
+      <h2>トレード情報の入力</h2>
     </div>
     <%= render 'devise/shared/error_messages', model: f.object %>
     <div class="img-upload">
