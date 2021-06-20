@@ -22,10 +22,12 @@
   padding-top: 30px;
   font-weight: bold;
   letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .side-bar h1 a {
   color: white;
+  text-decoration: none;
 }
 
 .search-side-bar h1 {
@@ -38,6 +40,7 @@
 
 .search-side-bar h1 a {
   color: white;
+  text-decoration: none;
 }
 
 .text-search {
@@ -49,13 +52,13 @@
 
 .input-search {
   width: 250px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
 }
 
 .fa-search-plus {
   position: absolute;
-  right: 30px;
+  right: 40px;
   top: 15px;
   border: none;
   background-color: white;
@@ -65,6 +68,7 @@
 .user-name {
   color: white;
   text-align: center;
+  line-height: 30px;
 }
 
 .nav-contents {
@@ -74,6 +78,7 @@
   padding-top: 30px;
   line-height: 50px;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .nav-list a {
@@ -82,6 +87,7 @@
 
 .nav-list a:hover {
   color: yellow;
+  text-decoration: none;
 }
 
 .right-contents {
@@ -96,11 +102,11 @@
   padding: 0.2em 0.5em;
   color: #454545;
   margin: 20px;
-  padding: 15px;
+  padding: 20px;
   width: 400px;
   font-weight: bold;
   font-size: 28px;
-  height: 50px;
+  height: 70px;
 }
 
 .right-contents h1:after, .right-content h1:after {
@@ -131,7 +137,9 @@
 	text-align: center;
 	color:  #fff;
   padding-right: 20px;
+  margin-bottom: 20px;
 }
+
 .sample2 .mask {
 	width:  100%;
 	height:	  100%;
@@ -143,6 +151,7 @@
 	-webkit-transition:	all 0.6s ease;
 	transition: all 0.6s ease;
 }
+
 .sample2:hover .mask {
 	opacity: 1;
 	padding-top: 80px;
@@ -192,4 +201,23 @@
 .font-btn i {
   padding-top: 10px;
   margin-right: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
 }

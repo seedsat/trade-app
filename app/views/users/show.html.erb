@@ -4,7 +4,7 @@
     <div class="right-content">
       <h1>トレード出品一覧</h1>
       <div class="trade-lists">
-        <% @pictures.each do |picture| %>
+        <% @pictures.sort.reverse.each do |picture| %>
           <%= link_to picture_path(picture) do %>
             <div class="sample2">
               <%= image_tag picture.images.first %>
@@ -26,6 +26,7 @@
           <% end %>
         <% end %>
       </div>
+      <%= paginate @pictures %>
     </div>
   </div>
 </div>
