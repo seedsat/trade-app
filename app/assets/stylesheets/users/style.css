@@ -8,6 +8,8 @@
   background-color:#FAFAFA;
   margin-top: 100px;
   margin-bottom: 100px;
+  padding-left: 0;
+  padding-right: 0;
 
 }
 .picture-container {
@@ -145,6 +147,7 @@ button:hover, .button:hover {
 
 .back-button:hover {
   color: white;
+  text-decoration: none;
 }
 
 label.error {

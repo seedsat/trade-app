@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :move_index, only: [:show]
 
   def show
-    @pictures = @user.pictures.sort.reverse
+    @pictures = @user.pictures.page(params[:page]).per(6)
   end
 
   def like

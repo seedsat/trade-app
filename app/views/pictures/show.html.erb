@@ -2,7 +2,7 @@
 <div class="item-detail-wrapper">
   <%= render 'shared/sidebar' %>
   <div class="item-detail-contents">
-    <h1><%= @picture.name %></h1>
+    <h1><%= simple_format(@picture.name) %></h1>
     <div class="item-images">
       <% @picture.images.each do |image| %>
         <%= image_tag image %>

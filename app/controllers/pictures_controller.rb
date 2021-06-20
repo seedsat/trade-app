@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
   before_action :search_pictures, only: [:index, :show, :search]
 
   def index
-    @pictures = Picture.includes(:user).order('created_at desc')
+    @pictures = Picture.includes(:user).order('created_at desc').page(params[:page]).per(6)
   end
 
   def new
@@ -42,7 +42,7 @@ class PicturesController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:user).order('created_at desc')
+    @results = @p.result.includes(:user).order('created_at desc').page(params[:page]).per(6)
   end
 
   private
