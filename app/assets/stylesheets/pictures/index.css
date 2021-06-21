@@ -171,6 +171,12 @@
   margin-right: 10px;
 }
 
+.caption .trade {
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .pictures {
   margin-bottom: 10px;
   border: solid 1px #000;

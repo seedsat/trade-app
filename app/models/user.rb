@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_one  :address
   has_many :comments
   has_many :likes
+  has_many :tradings
 
   # ログインしているユーザーがいいねをしているかどうかを判定
   def liked_by?(picture_id)
