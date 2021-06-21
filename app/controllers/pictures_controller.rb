@@ -39,6 +39,7 @@ class PicturesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @picture.comments.includes(:user)
+    @trade = Trading.find_by(picture_id: params[:id])
   end
 
   def search

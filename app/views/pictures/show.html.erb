@@ -54,10 +54,14 @@
       <div class="comment-area">
         <%=form_with model: [@picture, @comment], method: :post, local: true do |f| %>
           <%= f.text_area :text, class: "comment-text", placeholder: "コメントする" %>
-          <button type="submit" class="comment-btn">
-            <i class="fas fa-comment-alt"></i>
-            コメントする
-          </button>
+          <% if @trade.nil? %>
+            <button type="submit" class="comment-btn">
+              <i class="fas fa-comment-alt"></i>
+              コメントする
+            </button>
+          <% else %>
+            <span class="nocomment-btn">コメント出来ません</span>
+          <% end %>
         <% end %>
         <div class="comments-area">
           <% @comments.each do |comment| %>
@@ -65,6 +69,11 @@
               <div class="balloon-left">
                 <p><span class="comment-name"><%= comment.user.nickname %></span>さん</p>
                 <p><%= simple_format(comment.text) %></p>
+                <% if @trade.nil? && @picture.user_id == current_user.id %>
+                  <div class='trade-btn' >
+                    <%= link_to '取引する', create_trading_path(@picture, comment.user_id), method: :post, id: "trade-button" %>
+                  </div>
+                <% end %>
               </div>
             <% else %>
               <div class="balloon-right">

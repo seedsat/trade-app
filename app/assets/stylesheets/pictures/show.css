@@ -147,6 +147,17 @@
   margin-top: 30px;
 }
 
+.nocomment-btn {
+  width: 50%;
+  background-color: red;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  padding: 20px;
+  color: white;
+}
+
 .fa-arrow-alt-circle-left {
   font-size: 50px;
   position: absolute;
@@ -237,4 +248,23 @@
 
 .red-heart {
   color: red;
+}
+
+.trade-btn {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  padding-left: 15px;
+}
+
+.trade-btn a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: red;
+}
+
+.trade-btn a {
+  line-height: 30px;
 }
