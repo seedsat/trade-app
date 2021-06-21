@@ -3,6 +3,7 @@ class PicturesController < ApplicationController
   before_action :find_picture, only: [:edit, :update, :destroy, :show]
   before_action :move_index, only: [:edit, :update, :destroy]
   before_action :search_pictures, only: [:index, :show, :search]
+  before_action :after_trading_move_index, only: [:edit, :update, :destory]
 
   def index
     @pictures = Picture.includes(:user).order('created_at desc').page(params[:page]).per(6)
@@ -39,7 +40,6 @@ class PicturesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @picture.comments.includes(:user)
-    @trade = Trading.find_by(picture_id: params[:id])
   end
 
   def search
@@ -62,5 +62,9 @@ class PicturesController < ApplicationController
 
   def search_pictures
     @p = Picture.ransack(params[:q])
+  end
+
+  def after_trading_move_index
+    redirect_to root_path if @picture.trading.present?
   end
 end

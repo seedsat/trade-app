@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :move_index, only: [:show]
 
   def show
-    @pictures = @user.pictures.page(params[:page]).per(6)
+    @pictures = @user.pictures.order('created_at desc').page(params[:page]).per(6)
   end
 
   def like

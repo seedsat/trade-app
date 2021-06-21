@@ -25,6 +25,12 @@
   height: 500px;
 }
 
+.after-trading {
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+}
+
 .edit-delete {
   width: 300px;
   display: flex;
