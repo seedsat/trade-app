@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%= @applicant_user.nickname %>様へ<br>
+  <br>
+  <%= @request_user.nickname %>様とのトレードが成立しました<br>
+  <br>
+  こちらが<%= @request_user.nickname %>様の配送先住所になります<br>
+  <br>
+  氏　　名:<%= @request_user.last_name %><%= @request_user.first_name %><br>
+  郵便番号:<%= @request_user.address.postal_code %><br>
+  住　　所:<%= @prefecture.name %><%= @request_user.address.city %><%= @request_user.address.house_number %><% if @request_user.address.building_name %><%= @request_user.address.building_name %><% end %><br>
+  電話番号:<%= @request_user.address.telephone_number %><br>
+  <br>
+  準備が出来次第配送の方をお願い致します。<br>
+  <br>
+  この度は、ご利用いただきありがとうございます。
+</body>
+</html>

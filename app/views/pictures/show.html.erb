@@ -2,6 +2,11 @@
 <div class="item-detail-wrapper">
   <%= render 'shared/sidebar' %>
   <div class="item-detail-contents">
+    <% if notice %>
+      <p id="flash-notice"><%= notice %></p>
+    <% else %>
+      <p id="flash-alert"><%= alert %></p>
+    <% end %>
     <h1><%= simple_format(@picture.name) %></h1>
     <div class="item-images">
       <% @picture.images.each do |image| %>
@@ -69,7 +74,7 @@
               <div class="balloon-left">
                 <p><span class="comment-name"><%= comment.user.nickname %></span>さん</p>
                 <p><%= simple_format(comment.text) %></p>
-                <% if @picture.trading.nil? && @picture.user_id == current_user.id %>
+                <% if @picture.trading.nil? && comment.user.address.present? && @picture.user_id == current_user.id %>
                   <div class='trade-btn' >
                     <%= link_to '取引する', create_trading_path(@picture, comment.user_id), method: :post, id: "trade-button" %>
                   </div>
