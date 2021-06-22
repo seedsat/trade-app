@@ -3,7 +3,6 @@ class TradeMailer < ApplicationMailer
 
   def request_email
     @prefecture = Prefecture.find(@applicant_user.address.prefecture_id)
-    binding.pry
     mail(to: @request_user.email, subject: 'トレードが成立しました')
   end
 
