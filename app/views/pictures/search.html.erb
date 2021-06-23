@@ -13,20 +13,26 @@
           <%= link_to picture_path(result) do %>
             <div class="sample2">
               <%= image_tag result.images.first %>
-              <div class="mask">
-                <div class="caption"><%= result.name %></div>
-                <div class="mask-icon">
-                  <div class="caption"><i class="far fa-comment-alt"></i><%= result.comments.count %></div>
-                  <div class="caption">
-                    <% if user_signed_in? && current_user.liked_by?(result.id) %>
-                      <i class="fas fa-heart red-heart"></i>
-                    <% else %>
-                      <i class="fas fa-heart"></i>
-                    <% end %>
-                    <span><%= result.likes.count %></span>
+                <% if result.trading.nil? %>
+                  <div class="mask">
+                    <div class="caption"><%= result.name %></div>
+                    <div class="mask-icon">
+                      <div class="caption"><i class="far fa-comment-alt"></i><%= result.comments.count %></div>
+                      <div class="caption">
+                        <% if user_signed_in? && current_user.liked_by?(result.id) %>
+                          <i class="fas fa-heart red-heart"></i>
+                        <% else %>
+                          <i class="fas fa-heart"></i>
+                        <% end %>
+                        <span><%= result.likes.count %></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                <% else %>
+                  <div class="mask">
+                    <div class="caption"><span class='trade'>取引が終了しました</span></div>
+                  </div>
+                <% end %>
             </div>
           <% end %>
         <% end %>
