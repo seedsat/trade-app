@@ -61,7 +61,12 @@ class PicturesController < ApplicationController
   end
 
   def search_pictures
-    @p = Picture.ransack(params[:q])
+    if params[:q].present? && params[:q][:group_id_eq] == "1"
+      params[:q][:group_id_eq] = ""
+      @p = Picture.ransack(params[:q])
+    else
+      @p = Picture.ransack(params[:q])
+    end
   end
 
   def after_trading_move_index

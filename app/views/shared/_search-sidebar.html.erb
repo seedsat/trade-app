@@ -14,7 +14,7 @@
     </div>
     <div class="search-group">
       <h3><i class="fas fa-users"></i>グループ</h3>
-      <%= f.collection_select(:group_id_eq, Group.where.not(id: 1), :id, :name, {prompt: "選択してください"}, {class: "group-select"}) %>
+      <%= f.collection_select(:group_id_eq, Group.all, :id, :name, {prompt: "選択してください"}, {class: "group-select"}) %>
     </div>
     <div class="search-group">
       <h3><i class="far fa-images"></i>写真ポジション</h3>
