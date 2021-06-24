@@ -4,28 +4,26 @@
 アイドルグループの生写真トレードサイト。<br>
 現段階では坂道3グループのみに対応しています。<br>
 会員登録を終えたユーザがトレードを希望出来て、コメントしてきたユーザーの中からトレードしてもいいユーザーがいれば取引するボタンを押して取引成立です。
-
-
+<br>
+<br>
 ## URL
 https://trade-app-35823.herokuapp.com/
-
-
-
+<br>
+<br>
 ## 利用方法
-会員登録をせずともトレード希望を出されている物は全て見れます。
-トレードをしたいユーザーは会員登録が必須になります。
-
-
+会員登録をせずともトレード希望を出されている物は全て見れます。<br>
+トレードやコメントをしたいユーザーは会員登録が必須になります。
+<br>
+<br>
 ## 目指した課題解決
-アイドルグッズの中で生写真の需要はかなり高いです。<br>
-生写真のトレードはイベント会場で行うのが普通ですが、<br>
+アイドルグッズの中で生写真の需要はかなり高くコレクションの要素も高いです。<br>
+通常、生写真のトレードはイベント会場で行うのですが、<br>
 このコロナ禍でイベントがなくなりトレードを行える場所がなくなりました。<br>
-そこで、イベントがなくてもトレードを行える場所を提供しようと思い作成しました。<br>
+そこで、イベントがなくてもトレードを気軽に行える場所を提供しようと思い作成しました。<br>
 また、都市部に住んでいない地方在住者にも気軽にトレードをしてもらいたく考えました。
-
-
-
-## 実装した機能
+<br>
+<br>
+## 洗い出した要件
 - 会員登録
 - 商品出品
 - 商品編集
@@ -37,11 +35,12 @@ https://trade-app-35823.herokuapp.com/
 - マイページ
 - いいね
 - ページネーション
-
-
-
+<br>
+<br>
+<br>
 
 # テーブル設計
+<br>
 
 ## usersテーブル
 
@@ -61,6 +60,8 @@ https://trade-app-35823.herokuapp.com/
 - has_many :transactions
 - has_many :comments
 - has_many :likes
+<br>
+<br>
 
 ## picturesテーブル
 
@@ -82,6 +83,9 @@ https://trade-app-35823.herokuapp.com/
 - has_many          :likes
 - has_many_attached :images
 
+<br>
+<br>
+
 ## transactionsテーブル
 
 | Column    | Type       | Options                        |
@@ -93,6 +97,9 @@ https://trade-app-35823.herokuapp.com/
 
 - belongs_to :user
 - belongs_to :picture
+
+<br>
+<br>
 
 ## Addressesテーブル
 
@@ -110,6 +117,9 @@ https://trade-app-35823.herokuapp.com/
 
 - has_one :user
 
+<br>
+<br>
+
 ## Commentsテーブル
 
 | Column    | Type       | Options                        |
@@ -122,6 +132,9 @@ https://trade-app-35823.herokuapp.com/
 
 - belongs_to :user
 - belongs_to :picture
+
+<br>
+<br>
 
 ## Likesテーブル
 
