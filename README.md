@@ -24,17 +24,62 @@ https://trade-app-35823.herokuapp.com/
 <br>
 <br>
 ## 洗い出した要件
+
 - 会員登録
+<br>
+
+[![Image from Gyazo](https://i.gyazo.com/4baee4f769ef363c894eade02642d628.gif)](https://gyazo.com/4baee4f769ef363c894eade02642d628)
+
+<br>
+<br>
+
 - 商品出品
+
+[![Image from Gyazo](https://i.gyazo.com/93d620f1fba638ce44ab21d3c61a6923.gif)](https://gyazo.com/93d620f1fba638ce44ab21d3c61a6923)
+<br>
+<br>
 - 商品編集
+
+[![Image from Gyazo](https://i.gyazo.com/52d8b4a1c84bdf83767d20076d8bae2a.gif)](https://gyazo.com/52d8b4a1c84bdf83767d20076d8bae2a)
+<br>
+<br>
 - 商品削除
+
+[![Image from Gyazo](https://i.gyazo.com/af2ed7ef562986f2e0f293190db9d7c9.gif)](https://gyazo.com/af2ed7ef562986f2e0f293190db9d7c9)
+<br>
+<br>
 - 商品一覧
 - 商品詳細
 - コメント
+
+[![Image from Gyazo](https://i.gyazo.com/2249f468b6f3b481f5b6a91bb3fd1ae7.png)](https://gyazo.com/2249f468b6f3b481f5b6a91bb3fd1ae7)
+<br>
+<br>
+
 - 商品検索
+
+[![Image from Gyazo](https://i.gyazo.com/73cd568622d6af1acf4c2defee8c224e.gif)](https://gyazo.com/73cd568622d6af1acf4c2defee8c224e)
+
+[![Image from Gyazo](https://i.gyazo.com/397e6756c41682959f473fc643e54707.gif)](https://gyazo.com/397e6756c41682959f473fc643e54707)
+<br>
+<br>
+
 - マイページ
+
+[![Image from Gyazo](https://i.gyazo.com/5990248da12edd98ddbea5d1a1c0f545.jpg)](https://gyazo.com/5990248da12edd98ddbea5d1a1c0f545)
+
+<br>
+<br>
+
 - いいね
+
+[![Image from Gyazo](https://i.gyazo.com/494bd2b661c36f8669fc5f3b2f8dba1c.gif)](https://gyazo.com/494bd2b661c36f8669fc5f3b2f8dba1c)
+
+<br>
+<br>
+
 - ページネーション
+
 <br>
 <br>
 <br>
