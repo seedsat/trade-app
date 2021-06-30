@@ -80,7 +80,7 @@ https://trade-app-35823.herokuapp.com/
 
 - ページネーション
 
-[![Image from Gyazo](https://i.gyazo.com/088890758ba0e0156334587c87ea9850.gif)](https://gyazo.com/088890758ba0e0156334587c87ea9850)
+[![Image from Gyazo](https://i.gyazo.com/c1e675361db82be9c78cca6fab1f74fc.png)](https://gyazo.com/c1e675361db82be9c78cca6fab1f74fc)
 
 
 <br>
